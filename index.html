@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Minh Quân — Fullstack Developer & WordPress Freelancer</title>
+    <meta
+      name="description"
+      content="Nguyễn Minh Quân — Fullstack Developer (Node.js/React) & WordPress Freelancer chuyên Spa/Clinic. Cần Thơ, Việt Nam."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #13171c;
+        --bg-raised: #1a1f26;
+        --bg-card: #1d232b;
+        --line: #2a323c;
+        --text: #e9e6dd;
+        --text-dim: #9ba3ad;
+        --text-faint: #5c6570;
+        --gold: #d4a24e;
+        --gold-soft: rgba(212, 162, 78, 0.12);
+        --teal: #7fbfae;
+        --teal-soft: rgba(127, 191, 174, 0.12);
+
+        --display: "Fraunces", serif;
+        --body: "Source Sans 3", sans-serif;
+        --mono: "JetBrains Mono", monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--body);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::selection {
+        background: var(--gold-soft);
+        color: var(--gold);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+
+      /* ---------- Top nav ---------- */
+      header.nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        background: rgba(19, 23, 28, 0.85);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 28px;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .nav-logo {
+        font-family: var(--mono);
+        font-size: 14px;
+        color: var(--gold);
+        letter-spacing: 0.02em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--text-dim);
+      }
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+      .nav-links a {
+        transition: color 0.2s;
+      }
+
+      /* ---------- Hero / terminal signature ---------- */
+      .hero {
+        padding: 96px 0 64px;
+      }
+      .terminal {
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--text-faint);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--bg-raised);
+        padding: 14px 18px;
+        margin-bottom: 48px;
+        max-width: 520px;
+      }
+      .terminal .dots {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .terminal .dots span {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--line);
+      }
+      .terminal .line {
+        white-space: pre;
+      }
+      .terminal .prompt {
+        color: var(--teal);
+      }
+      .terminal .cursor {
+        display: inline-block;
+        width: 7px;
+        height: 14px;
+        background: var(--gold);
+        margin-left: 2px;
+        vertical-align: middle;
+        animation: blink 1s steps(1) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .hero h1 {
+        font-family: var(--display);
+        font-weight: 500;
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        max-width: 780px;
+      }
+      .hero h1 .accent {
+        color: var(--gold);
+        font-style: italic;
+        font-weight: 500;
+      }
+      .hero .sub {
+        margin-top: 24px;
+        font-size: 1.1rem;
+        color: var(--text-dim);
+        max-width: 560px;
+      }
+      .hero .meta {
+        margin-top: 32px;
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--text-faint);
+      }
+      .hero .meta a {
+        color: var(--text-dim);
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 2px;
+      }
+      .hero .meta a:hover {
+        color: var(--gold);
+        border-color: var(--gold);
+      }
+
+      /* ---------- Section heading ---------- */
+      .section {
+        padding: 80px 0;
+        border-top: 1px solid var(--line);
+      }
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--teal);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .section h2 {
+        font-family: var(--display);
+        font-weight: 500;
+        font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+        margin-bottom: 16px;
+        max-width: 640px;
+      }
+      .section .lede {
+        color: var(--text-dim);
+        max-width: 600px;
+        margin-bottom: 48px;
+        font-size: 1.02rem;
+      }
+
+      /* ---------- Three roles strip ---------- */
+      .roles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .role {
+        background: var(--bg-card);
+        padding: 28px 24px;
+      }
+      .role .tag {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--text-faint);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .role h3 {
+        font-family: var(--display);
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 10px 0 10px;
+      }
+      .role p {
+        font-size: 0.92rem;
+        color: var(--text-dim);
+      }
+      @media (max-width: 760px) {
+        .roles {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- WordPress projects ---------- */
+      .proj-card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--bg-card);
+        margin-bottom: 28px;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+      }
+      .proj-card.reverse {
+        grid-template-columns: 1fr 1.1fr;
+      }
+      .proj-card.reverse .proj-media {
+        order: 2;
+      }
+      @media (max-width: 760px) {
+        .proj-card,
+        .proj-card.reverse {
+          grid-template-columns: 1fr;
+        }
+        .proj-card.reverse .proj-media {
+          order: 0;
+        }
+      }
+      .proj-media {
+        background: #0e1115;
+        position: relative;
+        min-height: 220px;
+      }
+      .proj-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      .proj-media .ph {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        color: var(--text-faint);
+        font-size: 12px;
+        padding: 24px;
+        text-align: center;
+      }
+      .proj-body {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .proj-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--teal);
+        background: var(--teal-soft);
+        padding: 4px 10px;
+        border-radius: 20px;
+        width: fit-content;
+        margin-bottom: 16px;
+      }
+      .proj-status .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--teal);
+      }
+      .proj-body h3 {
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .proj-body .role-line {
+        font-size: 0.85rem;
+        color: var(--text-faint);
+        font-family: var(--mono);
+        margin-bottom: 16px;
+      }
+      .proj-body p.desc {
+        color: var(--text-dim);
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+      .proj-features {
+        list-style: none;
+        margin-bottom: 20px;
+      }
+      .proj-features li {
+        font-size: 0.88rem;
+        color: var(--text-dim);
+        padding-left: 18px;
+        position: relative;
+        margin-bottom: 8px;
+      }
+      .proj-features li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: var(--gold);
+        font-family: var(--mono);
+      }
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: auto;
+      }
+      .stack span {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--text-faint);
+        border: 1px solid var(--line);
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+
+      /* ---------- Fullstack project ---------- */
+      .fs-card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--bg-card);
+        padding: 36px;
+        margin-bottom: 24px;
+      }
+      .fs-card h3 {
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+      .fs-card .role-line {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--text-faint);
+        margin-bottom: 18px;
+      }
+      .fs-card p.desc {
+        color: var(--text-dim);
+        margin-bottom: 20px;
+        max-width: 680px;
+      }
+      .fs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 28px;
+        margin-bottom: 24px;
+      }
+      @media (max-width: 640px) {
+        .fs-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .fs-grid li {
+        list-style: none;
+        font-size: 0.88rem;
+        color: var(--text-dim);
+        padding-left: 18px;
+        position: relative;
+      }
+      .fs-grid li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: var(--teal);
+        font-family: var(--mono);
+      }
+
+      /* ---------- Skills ---------- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .skill-col {
+        background: var(--bg-card);
+        padding: 24px 22px;
+      }
+      .skill-col h4 {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 14px;
+      }
+      .skill-col ul {
+        list-style: none;
+      }
+      .skill-col li {
+        font-size: 0.88rem;
+        color: var(--text-dim);
+        margin-bottom: 8px;
+      }
+      @media (max-width: 760px) {
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 460px) {
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Timeline (experience) ---------- */
+      .timeline {
+        position: relative;
+        padding-left: 28px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 6px;
+        bottom: 6px;
+        width: 1px;
+        background: var(--line);
+      }
+      .tl-item {
+        position: relative;
+        margin-bottom: 36px;
+      }
+      .tl-item::before {
+        content: "";
+        position: absolute;
+        left: -28px;
+        top: 5px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 2px solid var(--gold);
+      }
+      .tl-item .date {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-faint);
+        margin-bottom: 6px;
+      }
+      .tl-item h4 {
+        font-family: var(--display);
+        font-size: 1.15rem;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .tl-item .org {
+        font-size: 0.88rem;
+        color: var(--teal);
+        margin-bottom: 10px;
+      }
+      .tl-item ul {
+        list-style: none;
+      }
+      .tl-item li {
+        font-size: 0.9rem;
+        color: var(--text-dim);
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 6px;
+      }
+      .tl-item li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--text-faint);
+      }
+
+      /* ---------- Teaching note ---------- */
+      .teach-card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--bg-card);
+        padding: 32px;
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+      }
+      @media (max-width: 600px) {
+        .teach-card {
+          flex-direction: column;
+        }
+      }
+      .teach-icon {
+        font-family: var(--display);
+        font-style: italic;
+        font-size: 2.6rem;
+        color: var(--gold);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .teach-card p {
+        color: var(--text-dim);
+        font-size: 0.95rem;
+      }
+      .teach-card .org {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-faint);
+        margin-top: 14px;
+      }
+
+      /* ---------- Education ---------- */
+      .edu-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .edu-row:last-child {
+        border-bottom: none;
+      }
+      .edu-row h4 {
+        font-family: var(--display);
+        font-weight: 500;
+        font-size: 1.05rem;
+      }
+      .edu-row .org {
+        font-size: 0.88rem;
+        color: var(--text-dim);
+      }
+      .edu-row .date {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-faint);
+        white-space: nowrap;
+      }
+
+      /* ---------- CTA / Contact ---------- */
+      .cta-section {
+        padding: 90px 0 100px;
+        text-align: center;
+      }
+      .cta-section h2 {
+        font-family: var(--display);
+        font-weight: 500;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        margin-bottom: 18px;
+      }
+      .cta-section p {
+        color: var(--text-dim);
+        max-width: 480px;
+        margin: 0 auto 36px;
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        font-family: var(--mono);
+        font-size: 13px;
+        padding: 13px 26px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: #13171c;
+        font-weight: 500;
+      }
+      .btn-primary:hover {
+        background: #e0b266;
+      }
+      .btn-ghost {
+        border: 1px solid var(--line);
+        color: var(--text-dim);
+      }
+      .btn-ghost:hover {
+        border-color: var(--teal);
+        color: var(--teal);
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0;
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      footer p {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-faint);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">~/minhquan</div>
+        <nav class="nav-links">
+          <a href="#wordpress">WordPress</a>
+          <a href="#fullstack">Fullstack</a>
+          <a href="#skills">Kỹ năng</a>
+          <a href="#experience">Kinh nghiệm</a>
+          <a href="#contact">Liên hệ</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <div class="terminal">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="line"><span class="prompt">quan@dev</span> ~ whoami</div>
+          <div class="line">
+            Fullstack Developer · WordPress Freelancer · Giáo viên Tin học<span
+              class="cursor"
+            ></span>
+          </div>
+        </div>
+
+        <h1>
+          Xây hệ thống chạy được,<br />và giao diện
+          <span class="accent">khách tin được</span>.
+        </h1>
+        <p class="sub">
+          Tốt nghiệp Kỹ thuật Phần mềm — Đại học Cần Thơ. Làm việc ở hai đầu của
+          một sản phẩm web: backend/logic vững (Node.js, React, MySQL) và giao
+          diện WordPress/Elementor chỉn chu, tập trung vào ngách Spa – Thẩm mỹ
+          viện – Phòng khám.
+        </p>
+        <div class="meta">
+          <span>📍 Cần Thơ, Việt Nam</span>
+          <a href="mailto:nmq936966@gmail.com">nmq936966@gmail.com</a>
+          <a href="tel:0378371553">0378 371 553</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="eyebrow">Ba vai trò, một tư duy hệ thống</div>
+        <h2>
+          Không phải ba người khác nhau — là một người nhìn sản phẩm từ ba góc.
+        </h2>
+        <div class="roles">
+          <div class="role">
+            <div class="tag">01 — Code</div>
+            <h3>Fullstack Developer</h3>
+            <p>
+              Xây dựng backend bằng Node.js/Express, frontend bằng React, thiết
+              kế database quan hệ MySQL. Từng làm hệ thống thương mại điện tử
+              end-to-end.
+            </p>
+          </div>
+          <div class="role">
+            <div class="tag">02 — Giao diện</div>
+            <h3>WordPress Freelancer</h3>
+            <p>
+              Build website WordPress/Elementor cho ngách Spa – Thẩm mỹ – Phòng
+              khám: từ landing page đến hệ thống CPT/ACF quản lý nội dung đầy
+              đủ.
+            </p>
+          </div>
+          <div class="role">
+            <div class="tag">03 — Truyền đạt</div>
+            <h3>Giáo viên Tin học</h3>
+            <p>
+              Thực tập giảng dạy Tin học bậc THPT. Kỹ năng diễn giải vấn đề kỹ
+              thuật thành thứ người không chuyên cũng hiểu được — hữu ích khi
+              làm việc với khách hàng.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="wordpress">
+      <div class="wrap">
+        <div class="eyebrow">WordPress · Elementor · ACF</div>
+        <h2>Dự án WordPress — chuyên ngách Spa &amp; Phòng khám</h2>
+        <p class="lede">
+          Hai dự án portfolio xây từ đầu, không dùng template dựng sẵn, nhắm
+          đúng vào nhu cầu thực tế của khách ngành làm đẹp – y tế tại Việt Nam.
+        </p>
+
+        <div class="proj-card">
+          <div class="proj-media">
+            <img
+              src="assets/aura-hero.jpg"
+              alt="Giao diện trang chủ website Aura Clinic & Spa"
+            />
+          </div>
+          <div class="proj-body">
+            <span class="proj-status"
+              ><span class="dot"></span>Hoàn thành — sẵn sàng bàn giao</span
+            >
+            <h3>Aura Clinic &amp; Spa</h3>
+            <div class="role-line">
+              Website Clinic-Spa đầy đủ · Custom Post Type · ACF
+            </div>
+            <p class="desc">
+              Website fictional mô phỏng mô hình Clinic-Spa phổ biến tại Việt
+              Nam, xây dựng để vừa làm portfolio, vừa có thể bàn giao thật cho
+              khách (ước tính 8–12 triệu VNĐ trọn gói hosting + domain năm đầu).
+            </p>
+            <ul class="proj-features">
+              <li>
+                CPT cho Dịch vụ / Đội ngũ / Chứng chỉ, quản lý qua ACF không cần
+                code
+              </li>
+              <li>Lọc dịch vụ theo nhóm bằng JS, modal xem ảnh</li>
+              <li>
+                Blog đầy đủ: bài liên quan, lọc danh mục, tìm kiếm riêng theo
+                post type
+              </li>
+              <li>
+                Form đặt lịch gửi mail qua SMTP, đã test hoạt động ổn định
+              </li>
+              <li>
+                PHP template tùy chỉnh cho CPT archive/single, CSS tổ chức theo
+                biến
+              </li>
+            </ul>
+            <div class="stack">
+              <span>WordPress</span><span>Elementor</span
+              ><span>ACF + CPT UI</span><span>WP Mail SMTP</span
+              ><span>LocalWP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card reverse">
+          <div class="proj-media">
+            <div class="ph">
+              [ Ảnh chụp landing page<br />Lotus Spa &amp; Beauty ]
+            </div>
+          </div>
+          <div class="proj-body">
+            <span class="proj-status"
+              ><span class="dot"></span>Hoàn thành — 7/7 section</span
+            >
+            <h3>Lotus Spa &amp; Beauty</h3>
+            <div class="role-line">
+              Landing Page 1 trang · WordPress + Elementor
+            </div>
+            <p class="desc">
+              Landing page xây từ đầu để vừa học sâu Elementor (Container,
+              Flexbox, Navigator), vừa làm portfolio apply các JD freelancer
+              WordPress yêu cầu ưu tiên ngành y tế/thẩm mỹ.
+            </p>
+            <ul class="proj-features">
+              <li>
+                7 section: Hero, Giới thiệu, Dịch vụ, Bảng giá, Testimonial,
+                Form đặt lịch, Footer
+              </li>
+              <li>
+                Bảng giá 3 gói (Cơ bản / Nâng cao / VIP), grid dịch vụ
+                hover-zoom bằng CSS
+              </li>
+              <li>
+                Form đặt lịch gửi thông báo về Gmail qua FluentSMTP + App
+                Password
+              </li>
+              <li>Tích hợp Google Analytics, Google Maps embed ở footer</li>
+              <li>Responsive đầy đủ cho mọi section trên mobile</li>
+            </ul>
+            <div class="stack">
+              <span>WordPress</span><span>Elementor</span><span>WPForms</span
+              ><span>FluentSMTP</span><span>Real Testimonials</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fullstack">
+      <div class="wrap">
+        <div class="eyebrow">Node.js · React · MySQL</div>
+        <h2>Dự án Fullstack</h2>
+        <p class="lede">
+          Nền tảng kỹ thuật phần mềm đứng sau khả năng customize WordPress sâu
+          hơn freelancer thông thường — đọc hiểu code, debug được, không chỉ
+          kéo-thả.
+        </p>
+
+        <div class="fs-card">
+          <h3>
+            Website kinh doanh kính thời trang — tích hợp AI gợi ý sản phẩm
+          </h3>
+          <div class="role-line">Luận văn tốt nghiệp · 12/2022 – 04/2023</div>
+          <p class="desc">
+            Hệ thống thương mại điện tử end-to-end: phân tích yêu cầu, thiết kế
+            kiến trúc, xây dựng backend/frontend và tích hợp engine gợi ý sản
+            phẩm cá nhân hóa.
+          </p>
+          <ul class="fs-grid">
+            <li>
+              Backend Node.js/Express: API đặt hàng, quản lý tồn kho, xác thực
+              người dùng
+            </li>
+            <li>
+              Frontend React: xem sản phẩm, lọc theo loại kính, giỏ hàng,
+              checkout
+            </li>
+            <li>
+              Tích hợp Recombee AI Recommendation Engine cho gợi ý cá nhân hóa
+            </li>
+            <li>
+              Thiết kế database quan hệ MySQL: sản phẩm, đơn hàng, tài khoản
+              khách hàng
+            </li>
+          </ul>
+          <div class="stack">
+            <span>Node.js</span><span>Express</span><span>React</span
+            ><span>MySQL</span><span>Recombee AI</span>
+          </div>
+        </div>
+
+        <div class="fs-card">
+          <h3>Website thương mại điện tử — thực tập tại Tin Học Á Châu</h3>
+          <div class="role-line">
+            Thực tập sinh Fullstack Developer · 05/2023 – 08/2023
+          </div>
+          <p class="desc">
+            Tham gia phát triển website thương mại điện tử hoàn chỉnh theo mô
+            hình Fullstack trong môi trường doanh nghiệp thực tế.
+          </p>
+          <ul class="fs-grid">
+            <li>Xây dựng RESTful API, xử lý logic nghiệp vụ phía Backend</li>
+            <li>Giao diện React: trang sản phẩm, giỏ hàng, quản lý đơn hàng</li>
+            <li>Thiết kế và quản lý cơ sở dữ liệu quan hệ</li>
+          </ul>
+          <div class="stack">
+            <span>Node.js</span><span>React</span><span>MySQL</span
+            ><span>Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="eyebrow">Toolbox</div>
+        <h2>Kỹ năng &amp; công cụ</h2>
+        <div class="skills-grid">
+          <div class="skill-col">
+            <h4>Backend</h4>
+            <ul>
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>RESTful API</li>
+              <li>MySQL</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>Frontend</h4>
+            <ul>
+              <li>React</li>
+              <li>HTML5 / CSS3</li>
+              <li>JavaScript (ES6+)</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>WordPress</h4>
+            <ul>
+              <li>Elementor</li>
+              <li>ACF + CPT UI</li>
+              <li>WPForms</li>
+              <li>SMTP (Gmail App Password)</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>Công cụ &amp; khác</h4>
+            <ul>
+              <li>Git / GitHub</li>
+              <li>Postman</li>
+              <li>LocalWP</li>
+              <li>Recombee AI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="eyebrow">Quá trình làm việc</div>
+        <h2>Kinh nghiệm</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="date">01/2026 – 04/2026</div>
+            <h4>Thực tập Giảng dạy môn Tin học</h4>
+            <div class="org">Trường THPT Tầm Vu</div>
+            <ul>
+              <li>
+                Xây dựng kế hoạch bài giảng, đề kiểm tra và đánh giá kết quả học
+                sinh
+              </li>
+              <li>
+                Hỗ trợ học sinh tiếp cận tư duy lập trình và ứng dụng CNTT
+              </li>
+            </ul>
+          </div>
+
+          <div class="tl-item">
+            <div class="date">09/2024 – 10/2025</div>
+            <h4>KTV Xử lý Dữ liệu</h4>
+            <div class="org">Công ty TNHH DIGI-TEXX, Chi nhánh Hậu Giang</div>
+            <ul>
+              <li>
+                Xử lý, phân loại và chuẩn hóa dữ liệu đa ngôn ngữ theo KPI
+              </li>
+              <li>Phối hợp nhóm QC phát hiện và xử lý lỗi dữ liệu</li>
+            </ul>
+          </div>
+
+          <div class="tl-item">
+            <div class="date">05/2023 – 08/2023</div>
+            <h4>Thực tập sinh Fullstack Developer</h4>
+            <div class="org">Công ty TNHH Tin Học Á Châu</div>
+            <ul>
+              <li>
+                Phát triển website thương mại điện tử hoàn chỉnh (Node.js +
+                React)
+              </li>
+              <li>Xây dựng RESTful API và xử lý logic nghiệp vụ Backend</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="eyebrow">Sư phạm</div>
+        <h2>Vì sao kinh nghiệm giảng dạy lại liên quan đến freelance</h2>
+        <div class="teach-card">
+          <div class="teach-icon">”</div>
+          <div>
+            <p>
+              Sở hữu Chứng chỉ Nghiệp vụ Sư phạm bậc THPT và có kinh nghiệm thực
+              tập giảng dạy thực tế. Khi làm freelancer, phần lớn thời gian
+              không phải là code — mà là giải thích cho khách (vốn không rành kỹ
+              thuật) hiểu họ đang trả tiền cho cái gì, và hướng dẫn họ tự quản
+              lý website sau khi bàn giao. Kỹ năng sư phạm giúp việc đó rõ ràng
+              và kiên nhẫn hơn.
+            </p>
+            <div class="org">
+              Chứng chỉ NVSP bậc THPT — Trung tâm Bồi dưỡng NVSP, Đại học Cần
+              Thơ · Cấp 06/2026
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="eyebrow">Học vấn</div>
+        <h2>Học vấn &amp; chứng chỉ</h2>
+        <div class="edu-row">
+          <div>
+            <h4>Kỹ thuật Phần mềm</h4>
+            <div class="org">Đại học Cần Thơ · GPA 2.96/4.0</div>
+          </div>
+          <div class="date">Tốt nghiệp 2023</div>
+        </div>
+        <div class="edu-row">
+          <div>
+            <h4>Chứng chỉ Nghiệp vụ Sư phạm bậc THPT</h4>
+            <div class="org">Trung tâm Bồi dưỡng NVSP — Đại học Cần Thơ</div>
+          </div>
+          <div class="date">Cấp 06/2026</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="wrap">
+        <div class="eyebrow" style="justify-content: center; display: flex">
+          Liên hệ
+        </div>
+        <h2>Có dự án WordPress hoặc Fullstack?</h2>
+        <p>
+          Phản hồi trong vòng 24h. Trao đổi rõ yêu cầu trước khi bắt tay vào làm
+          — không phát sinh giữa chừng.
+        </p>
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="mailto:nmq936966@gmail.com"
+            >✉ nmq936966@gmail.com</a
+          >
+          <a class="btn btn-ghost" href="tel:0378371553">📞 0378 371 553</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>© 2026 Nguyễn Minh Quân — Cần Thơ, Việt Nam</p>
+        <p>Built with HTML/CSS, no framework</p>
+      </div>
+    </footer>
+  </body>
+</html>
